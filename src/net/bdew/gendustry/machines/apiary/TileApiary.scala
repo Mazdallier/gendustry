@@ -236,14 +236,12 @@ with IIndustrialApiary {
   // IHousing
 
   override def getWorld = worldObj
-  override def setErrorState(state: Int) = errorState := state
   override def getErrorState = ErrorCodes.getErrorById(errorState)
   override def setErrorState(state: IErrorState) = errorState := state.getID
   override def getOwnerName = owner
   override def getXCoord = xCoord
   override def getYCoord = yCoord
   override def getZCoord = zCoord
-  override def getBiomeId = getModifiedBiome.biomeID
   override def getTemperature =
     if (BiomeHelper.isBiomeHellish(getModifiedBiome))
       EnumTemperature.HELLISH
